@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Genel Header Stili */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #2c3e50; /* Koyu mavi-gri tonları */
+    color: white;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menü */
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #c2d830;
+}
+
+/* Mobil İçin Hamburger Menü */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobil Görünüm (768px ve altı) */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Menü başlangıçta gizli */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #34495e;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block; /* Hamburger menüyü göster */
+    }
+
+    .navbar.active ul {
+        display: flex; /* Menü açıldığında görünür yap */
+    }
+}
+
+
+.hero {
+    background-image: url('images/header.png'); /* Arka plan resmi */
+    background-size: cover; /* Resmi tam ekran kaplayacak şekilde ayarla */
+    background-position: center; /* Resmi ortala */
+    background-repeat: no-repeat; /* Tekrar etmesini engelle */
+    color: black; /* Metin rengi */
+    text-align: center;
+    padding: 100px 20px; /* Kenarlardan boşluk ekleyerek mobilde daha iyi görünmesini sağla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* Minimum yükseklik belirleyerek daha dengeli görünüm sağla */
+}
+
+/* Mobil Uyumlu Yapı (768px ve altı) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+        background-size: contain; /* Küçük ekranlarda daha iyi görünmesi için */
+    }
+}
+
+
+.hero h1 {
+    font-size: 2rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #3e34ab;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #524d93;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.text h2 {
+    font-size: 2rem;
+}
+
+.text p {
+    font-size: 1rem;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 50px;
+}
+
+.service-item {
+    width: 30%; /* Ekran büyükken üçlü düzen */
+    min-width: 280px; /* Küçük ekranlarda genişlik ayarı */
+    text-align: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+}
+
+/* Tablet görünümü (768px ve altı) */
+@media (max-width: 768px) {
+    .service-item {
+        width: 45%; /* İki sütunlu yapı */
+    }
+}
+
+/* Mobil görünüm (480px ve altı) */
+@media (max-width: 480px) {
+    .service-item {
+        width: 100%; /* Tek sütun */
+    }
+}
+
+.service-item h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Sabit Butonlar */
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.whatsapp-button, .contact-button {
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* WhatsApp rengi */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+.contact-button {
+    background-color: #3498db; /* İletişim butonu rengi */
+}
+
+.contact-button:hover {
+    background-color: #2980b9;
+}
